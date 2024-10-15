@@ -1,0 +1,89 @@
+/* Target tablets (portrait and landscape) */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    /* Styles for tablets */
+h1{
+    display: none;
+}
+.search-container{
+    position: relative;
+    top: -21px;
+    left: 150px;
+    width: 550px;
+}
+  .arcraftnf-ioi{
+    
+    position: relative;
+    left: -35px;
+    width: 269px;
+  }  
+  .search-item{
+    /* background-color: aqua; */
+    width: 154px;
+  }
+  .search-icon{
+    position: relative;
+    left: -109px;
+  }
+  img{
+    position: relative;
+    top: 35px;
+  }
+button{
+    display: none;
+}
+.menu-button{
+  position: relative;
+  left: 730px;
+  top: -80px;
+
+}
+
+}
+@media (max-width: 1200px) {
+  .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+      position: relative;
+      left: 60px;
+  }
+ 
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  /* Styles for mobile devices */
+  
+     img{
+      position: relative;
+      left: 10px;
+     } 
+     h1{
+      display: none;
+     }
+     
+     .search-container{
+      display: none;
+     }
+    .grid-item{
+width: 448px;
+position: relative;
+left: -56px;
+    }
+    .grid-item img{
+width: 448px;
+    }
+.column{
+  position: relative;
+  left: -98px
+}
+}
+  

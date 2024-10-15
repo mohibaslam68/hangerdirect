@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dropdown</title>
+    <link rel="stylesheet" href="media home .css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; */
+        }
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    /* width: 1000px; */
+    height: 108px;
+    /* background-color: aqua; */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+img {
+    width: 47px;
+    height: 35px;
+    position: relative;
+    top: 31px;
+    left: 70px;
+    z-index: 2;
+    
+}
+h1{
+    color: #00AEEF;
+    position: relative;
+    left: 125px;
+    top: -10px;
+    /* font-family: ; */
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #E5E7EB;
+    border-radius: 56px;
+    padding: 10px;
+    width: 725px;
+    height: 53px;
+    max-width: 983px;
+    position: relative;
+    left: 355px;
+    top: -58px;
+}
+
+.search-box {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    /* background-color: white; */
+    border-radius: 40px;
+    padding: 15px 20px;
+    margin-right: 135px;
+}
+
+.search-item {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* background-color: #00a9e0; */
+    position: relative;
+    left: -29px;
+    border-radius: 37px;
+    height: 68px;
+    width: 190px;
+}
+
+
+
+.search-item input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: gray;
+    border-radius: 10px;
+    height: 31px;
+    background-color: unset;
+    margin-left: 22px;
+    margin-top: 13px;
+}
+
+.search-item:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+
+.search-item p {
+    font-size: 14px;
+    color: gray;
+    margin-left: 24px;
+    position: relative;
+    top: 15px;
+    /* font-weight: bold; */
+    font-family: system-ui;
+}
+
+.search-icon {
+  background-color: #00a9e0;
+  padding: 13px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  left: -77px;
+  width: 22px;
+  height: 22px;
+  top: 10px;
+}
+
+.search-icon i {
+/* position: relative;
+left: -40px; */
+}
+button{
+    background-color: white;
+    border-radius: 50%;
+    width: 148px;
+    height: 38px;
+    border-radius: 20px / 50%;
+    border: 1px solid gray;
+    font-size: 16px;
+    /* text-align: start; */
+    line-height: 24px;
+    position: relative;
+    left: 1122px;
+    top: -120px;
+    font-weight: bold;
+}
+button:hover{
+    cursor: pointer;
+}
+.arcraftnf-ioi{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* background-color: #00a9e0; */
+    position: relative;
+    left: 20px;
+    border-radius: 37px;
+    height: 68px;
+    width: 324px;
+}
+.arcraftnf-ioi:hover{
+    cursor: pointer;
+    background-color: white;
+}
+.arcraftnf-ioi p{
+    font-size: 14px;
+    color: gray;
+    margin-left: 24px;
+    position: relative;
+    top: 15px;
+    /* font-weight: bold; */
+    font-family: system-ui;
+}
+.search-item h2{
+    font-size: 14px;
+    color: black;
+    margin-left: 24px;
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+    font-family: system-ui;
+}
+.arcraftnf-ioi h2{
+    font-size: 14px;
+    color: black;
+    margin-left: 24px;
+    position: relative;
+    top: 15px;
+    font-weight: bold;
+    font-family: system-ui;
+}
+.menu-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* The button */
+  .menu-button {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+    /* background-color: #f1f1f1; */
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    left: 1135px;
+    top: -112px;
+    width: 61px;
+    height: 20px;
+  }
+
+  /* The three lines */
+  .menu-icon {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+  }
+
+  /* The dropdown content */
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    right: 0;
+    z-index: 1;
+    width: 261px;
+    border-radius: 11px;
+    /* border: 1px solid #ccc; */
+    position: fixed;
+    left: 1110px;
+    top: 87px;
+  }
+
+  .dropdown a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* CSS for showing the dropdown when checkbox is checked */
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked ~ .dropdown {
+    display: block;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+
+
+.circle{
+  /* background-color: #00a9e0; */
+  width: 35px;
+  height: 45px;
+  border-radius: 50%;
+  /* display: none; */
+
+}
+
+  /* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 255px;
+    position: relative;
+    left: 31px;
+    top: 20px;
+    
+
+} */
+
+/* .grid-item {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 8px;
+  width: 311px;
+  height:555px;
+  border: 1px solid #00000057;
+  
+  } */
+   
+  /* .grid-container2{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 255px;
+    position: relative;
+    left: 31px;
+    top: 215px;
+  }
+  .grid-container3{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 255px;
+    position: relative;
+    left: 31px;
+    top: 325px;
+  } */
+  .grid-item h2{
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    margin-top: 105px;
+    font-weight: 700;
+    line-height: 28px;
+    font-size: 20px;
+    position: absolute;
+    left: 28px;
+    font-family: 'Noto Sans', sans-serif;
+
+  }
+  
+   .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+    padding: 10px;
+}
+
+.grid-item {
+    width: 283px; /* Set width to 300px */
+    height: 500px; /* Set height to 500px */
+    /* background-color: #4CAF50; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 5px;
+    position: relative;
+    top: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.231);
+}.grid-item img{
+  width: 283px;
+  height: 250px;
+  position: revert;
+  margin-bottom: 250px;
+  z-index: 0;
+}
+.custom-line {
+  border: none;
+  height: 2px;
+  background-color: #00000017;
+  width: 75%;
+  margin: 20px auto;
+  position: absolute;
+  margin-top: 332px;
+  left: 25px;
+}
+.grid-item p{
+  position: absolute;
+    color: black;
+    top: 339px;
+    left: 28px;
+    color: rgb(115, 115, 115);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+}
+.rent-container {
+  font-family: 'Noto Sans', sans-serif;
+
+  position: absolute;
+  top: 407px;
+  left: 30px;
+}
+
+.rent-title {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #000;
+}
+.rent-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.rent-price span {
+  color: gray;
+  font-weight: normal;
+}
+p.price {
+  position: absolute;
+  top: 407px;
+  left: 30px;
+  color: #00a9e0;
+  font-weight: bold;
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  position: absolute;
+  top: 216px;
+}
+
+.column {
+  margin: 10px;
+  position: relative;
+  top: 173px;
+  left: -24px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #333;
+}
+
+span.price {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+.price-sale {
+  font-size: 16px;
+  color: #00aaff; /* Blue color for sale price */
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  color: #777;
+}
+.column p{
+  position: unset;
+}
+.search-item select {
+  margin-top: 10px; /* Adjust the space between the <p> and the dropdown */
+  padding: 5px;
+  font-size: 16px;
+}
+.search-item select {
+  margin-top: 10px; /* Adjust the space between the <p> and the dropdown */
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  background-color: #77777700;
+}
+
+
+
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: #00aaff;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            left: 200px;
+        }
+        .dropdown-menu { /* Changed from .dropdown to .dropdown-menu */
+            display: none;
+    position: absolute;
+    top: -28px;
+    background-color: white;
+    /* border-radius: 8px; */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 590px;
+    height: 664px;
+    z-index: 1;
+        }
+        
+        form{
+          position: relative;
+          top: 191px;
+          left: 131px;
+          
+        }
+        .dropdown-menu h2 { /* Changed from .dropdown to .dropdown-menu */
+            text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    left: 50px;
+    top: 110px;
+        }
+        .dropdown-menu label { /* Changed from .dropdown to .dropdown-menu */
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .dropdown-menu select, .dropdown-menu input { /* Changed from .dropdown to .dropdown-menu */
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .dropdown-menu button { /* Changed from .dropdown to .dropdown-menu */
+            padding: 10px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 227px;
+    position: relative;
+    left: 2px;
+    width: 471px;
+        }
+        .dropdown-menu button:hover { /* Changed from .dropdown to .dropdown-menu */
+            background-color: #008ecc;
+        }
+        input#location{
+          display: block;
+          width: 451px;  
+        }
+        input#term{
+            display: block;
+          width: 451px;  
+        }
+        select#size{
+            display: block;
+            width: 470px;  
+        }
+        .abc{
+            display: flex;
+            gap: 20px;
+            width: 470px;
+            height: 47px;
+        border-radius: 5px; 
+        border: 1px solid rgba(0, 0, 0, 0.488);
+            position: relative;
+            left: 131px;
+            top: 155px;
+        }
+        .abc p {
+            font-size: 16px;
+    color: #777;
+    position: relative;
+    left: 23px;
+    padding: 26px;
+    top: -10px;
+}
+.circle{
+    display: none;
+}
+        /* Target tablets (portrait and landscape) */
+        @media only screen and (min-width: 600px) and (max-width: 1024px) {
+            /* Styles for tablets */
+            h1{
+                display: none;
+            }
+            .search-container{
+                position: relative;
+                top: -21px;
+                left: 150px;
+                width: 550px;
+            }
+            .arcraftnf-ioi{
+                
+                position: relative;
+                left: -35px;
+                width: 269px;
+            }  
+            .search-item{
+                /* background-color: aqua; */
+                width: 154px;
+            }
+            .search-icon{
+                position: relative;
+                left: -109px;
+            }
+            img{
+                position: relative;
+                top: 35px;
+            }
+            button{
+                display: none;
+            }
+            .menu-button{
+                position: relative;
+                left: 730px;
+                top: -80px;
+                
+            }
+        }
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                position: relative;
+                left: 60px;
+            }
+    
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+      grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  /* Styles for mobile devices */
+  
+     img{
+      position: relative;
+      left: 10px;
+     } 
+     h1{
+      display: none;
+     }
+     
+     .search-container{
+      display: none;
+     }
+    .grid-item{
+width: 448px;
+position: relative;
+left: -56px;
+    }
+    .grid-item img{
+width: 448px;
+    }
+.column{
+  position: relative;
+  left: -98px
+}
+.circle{
+  position: relative;
+  left: 323px;
+  top: -80px;
+  display: flex;
+}
+.dropdown-menu{
+    margin-right: 356px;
+}
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/img/Screenshot 2024-10-07 at 2.21.17 AM.png" alt="">
+        <h1>hangar direct</h1>
+        <div class="search-container">
+            <div class="search-box">
+                <div class="search-item">
+                    <h2>Location</h2>
+                    <input type="text" placeholder="Search Location">
+                </div>
+                <div class="search-item">
+                    <h2>Label</h2>
+                    <p>All</p>
+                </div>
+                <div class="arcraftnf-ioi">
+                    <h2>Size</h2>
+                    <p>Any Aircraft</p>
+                </div>
+
+                <div class="search-icon">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+        </div>
+        
+        <button>
+            + Add Hangar
+        </button>
+        <div class="menu-container">
+            <label for="menu-toggle" class="menu-button">
+                <div class="menu-icon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="avatar"></div>
+            </label>
+
+            <!-- Hidden checkbox to trigger dropdown -->
+            <input type="checkbox" id="menu-toggle">
+
+            <div class="dropdown">
+                <a href="#">Sign In</a>
+                <a href="#">Help Desk</a>
+            </div>
+        </div>
+     
+
+
+    </header>
+<!-- Div acting as the circle -->
+<div class="circle" id="circleDiv">
+    <span>&#9660;</span> <!-- Down arrow for indicator -->
+    
+    <!-- Dropdown Menu -->
+    <div class="dropdown-menu" id="dropdownMenu"> <!-- Changed from dropdown to dropdown-menu -->
+        <h2>Search</h2>
+        <div class="abc">
+            <p>Anywhere</p>
+            <p>Any Week</p>
+            <p>Any aircraft</p>
+        </div>
+    
+        <form>
+            <!-- Location Dropdown -->
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Search Location">
+            
+            <!-- Term Dropdown (e.g. Date) -->
+            <label for="term">Term</label>
+            <input type="date" id="term" name="term">
+            
+            <!-- Size Dropdown -->
+            <label for="size">Size</label>
+            <select id="size" name="size">
+                <option value="">Any Aircraft</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+
+            <!-- Search Button -->
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+<div class="grid-container">
+    <div class="grid-item"><img src="/img/image-1.webp" alt="">
+        <h2>Hangar Space For Rent</h2>
+        <p>KEUL - Caldwell Industrial Airp...</p>
+        <hr class="custom-line">
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$500<span>/month</span></div>
+        </div>
+    </div>
+    <div class="grid-item"><img src="/img/image-1 (1).webp" alt="">
+        <h2>Only Hangar For Sale <br>
+            Near Park City Utah</h2>
+        <hr class="custom-line">
+        <p>KEVW - Evanston-Uinta Count..</p>
+        <p class="price">
+            $430,000
+        </p>
+    </div>
+    <div class="grid-item"><img src="/img/image-1 (2).webp" alt="">
+        <h2>Turboprop And Jet <br>
+            Space</h2>
+        <hr class="custom-line">
+        <p>KSZT - Sandpoint Airport - San...</p>
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$200<span>/day</span></div>
+        </div>
+    </div>
+    <div class="grid-item"><img src="/img/image-3.webp" alt="">
+        <h2>New Hangar With 17' <br>
+            Door</h2>
+        <hr class="custom-line">
+        <p>KSPA - Spartanburg Downtow..</p>
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$242<span>/day</span></div>
+        </div>
+    </div>
+
+
+    <div class="grid-item"><img src="img/1722463944147_2_IMG_7648.webp" alt="">
+        <h2>T-Hangar 67 On East <br>
+            Side</h2>
+        <hr class="custom-line">
+        <p>KBDN - Bend Municipal Airpor...</p>
+        <div class="container">
+            <div class="column">
+                <h3>For Rent :</h3>
+                <p><span class="price">$50</span>/day</p>
+                <p><span class="price">$700</span>/month</p>
+            </div>
+            <div class="column">
+                <h3>For Sale :</h3>
+                <p><span class="price-sale">$210,000</span></p>
+            </div>
+        </div>
+    
+    </div>
+
+
+    <div class="grid-item"><img src="/img/1724107308-image-1.webp" alt="">
+        <h2>T Hangar For Rent</h2>
+        <hr class="custom-line">
+        <p>KSAF - Santa Fe Municipal Airp...</p> <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$600<span>/month</span></div>
+        </div>
+        
+    </div>
+    <div class="grid-item"><img src="/img/image-3 (1).webp" alt="">
+        <h2>Cedar City Airport <br>
+            Hangar-5162 Square...</h2>
+        <hr class="custom-line">
+        <p>KCDC - Cedar City Regional Air...</p>
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$5,000<span>/month</span></div>
+        </div>
+    </div>
+    <div class="grid-item"><img src="/img/img 6.webp" alt="">
+        <h2>Hangar</h2>
+        <hr class="custom-line">
+        <p>KHRI - Hermiston Municipal Ai.</p>
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$6,000<span>/month</span></div>
+        </div>
+    </div>
+
+    <div class="grid-item"><img src="/img/image-10.webp" alt="">
+        <h2>100 X 80 Hangar And
+            3000 Sq Ft Of Office...</h2>
+        <p>KDHN - Dothan Regional Airp..</p>
+        <hr class="custom-line">
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$6,000<span>/month</span></div>
+        </div>
+
+    </div>
+    <div class="grid-item"><img src="/img/image-11.webp" alt="">
+        <h2>Hangar With Electricity
+            For Rent</h2>
+        <p>K041 - Watts Woodland Airpo..</p>
+        <hr class="custom-line">
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$350<span>/month</span></div>
+        </div>
+    </div>
+    <div class="grid-item"><img src="/img/image-12.webp" alt="">
+        <h2>150 X 90 Commercial <br>
+            Facility</h2>
+        <p>KSGU - St George Municipal Ai.</p>
+        <hr class="custom-line">
+        <p class="price">
+            $450,0000
+        </p>
+    </div>
+    <div class="grid-item"><img src="/img/image-13.webp" alt="">
+        <h2>NLV Airport Hangar OB- <br>2</h2>
+        <p>KVGT - North Las Vegas Airpor..</p>
+        <hr class="custom-line">
+        <div class="rent-container">
+            <div class="rent-title">For Rent :</div>
+            <div class="rent-price">$4,500<span>/month</span></div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    // Toggle the dropdown visibility when the circle is clicked
+    document.getElementById('circleDiv').addEventListener('click', function(event) {
+        // Prevent the click from propagating to the window.onclick
+        event.stopPropagation();
+        
+        const dropdown = document.getElementById('dropdownMenu');
+        if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+        } else {
+            dropdown.style.display = 'block';
+        }
+    });
+
+    // Optionally, close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        const dropdown = document.getElementById('dropdownMenu');
+        if (!event.target.closest('.circle') && !event.target.closest('.dropdown-menu')) { /* Updated selector */
+            dropdown.style.display = 'none';
+        }
+    };
+</script>
+
+</body>
+</html>
